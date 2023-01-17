@@ -1,9 +1,10 @@
 //your code here
-let count = 0;
-    let text = "";
-   document.getElementById("evaluatedText").addEventListener("keyup", function () {
-  text = document.getElementById("evaluatedText").value;
-  console.log(text);
-  count = text.length;
-  document.getElementById("letterCount").innerText = count;
-});
+let evaluatedText=document.getElementById("evaluatedText");
+let letterCount=document.getElementById("letterCount");
+evaluatedText.addEventListener("input",calculateLength)
+
+function calculateLength(){
+	let word=evaluatedText.value;
+	let wordLength=word.length;
+	letterCount.innerHTML=wordLength;
+}
